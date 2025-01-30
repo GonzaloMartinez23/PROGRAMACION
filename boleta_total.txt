@@ -1,0 +1,10 @@
+***** BOLETA TOTAL *****
+Cliente: KIKO - Piso 10 - Hab 4 - Valor: 50000
+Cliente: ALE - Piso 1 - Hab 1 - Valor: 100000
+----------------------------------
+Monto total a pagar: 150000.0
+Monto total de IVA: 28500.0
+----------------------------------
+Total con IVA: 178500.0
+----------------------------------
+GRACIAS POR PREFERIR NUESTRO HOTEL

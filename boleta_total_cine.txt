@@ -1,0 +1,9 @@
+***** BOLETA DE CINE *****
+Cliente: dfdfdfd - Fila A - Asiento 2 - Valor: 10000
+----------------------------------
+Monto total a pagar: 10000.0
+Monto total de IVA: 1900.0
+----------------------------------
+Total con IVA: 11900.0
+----------------------------------
+GRACIAS POR PREFERIR NUESTRO CINE

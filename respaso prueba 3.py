@@ -351,11 +351,151 @@
 # que esta  agendadas  con el nom,bre del cliente.
 
 
-valor_economica = 50000
-valor_suit = 70000
-valor_premium = 100000
+# valor_economica = 50000
+# valor_suit = 70000
+# valor_premium = 100000
 
-hotel = [[[], [], [], [], [], []],
+# hotel = [[[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []],
+#          [[], [], [], [], [], []]]
+
+# while True:
+#     print("""*****HOTEL CALIFORNIA*****
+#           1.- Agendar habitación
+#           2.- Ver estado del hotel
+#           3.- Verificar disponibilidad de habitaciones
+#           4.- Monetizar
+#           5.- Salir""")
+#     op = int(input("Seleccione una opción: "))
+
+#     match op:
+#         case 1:
+#             while True:
+
+#                 for i in range(len(hotel)):
+#                     print(f"Piso {len(hotel) - i}")
+
+#                 PISO = int(input("Seleccione un piso o ingrese 0 para salir: "))
+#                 if PISO == 0:
+#                     break
+#                 if PISO < 1 or PISO > len(hotel):
+#                     print("Piso no válido, intente nuevamente.")
+#                     continue
+
+#                 for j in range(len(hotel[0])):
+#                     print(f"Habitación {j + 1}")
+
+#                 HABI = int(input("Seleccione una habitación o ingrese 0 para salir: "))
+#                 if HABI == 0:
+#                     break
+#                 if HABI < 1 or HABI > len(hotel[0]):
+#                     print("Habitación no válida, intente nuevamente.")
+#                     continue
+
+#                 piso_seleccionado = len(hotel) - PISO
+#                 habitacion_seleccionada = HABI - 1
+
+#                 if hotel[piso_seleccionado][habitacion_seleccionada] == []:
+#                     nombre = input("Ingrese el nombre del cliente: ")
+#                     hotel[piso_seleccionado][habitacion_seleccionada].append(nombre)
+#                     print(f"Habitación {HABI} agendada para {nombre} en el piso {PISO}.")
+#                     break
+#                 else:
+#                     print("Habitación ocupada")
+
+#         case 2:
+#             print("Estado del hotel :")
+#             for h in hotel:
+#                 print(h)
+                
+#         case 3:
+#             print("Habitaciones disponibles y ocupadas:")
+#             for i, piso in enumerate(hotel):
+#                 piso_numero = len(hotel) - i
+#                 print(f"\nPiso {piso_numero}:")
+#                 for j, habitacion in enumerate(piso):
+#                     if not habitacion:
+#                         print(f"  Habitación {j + 1}: Libre")
+#                     else:
+#                         print(f"  Habitación {j + 1}: Ocupada por {habitacion[0]}")
+
+#         case 4:
+#             print("Monetizando...")
+
+
+#             monto_base_total = 0.0
+#             iva_total = 0.0
+#             total_con_iva_total = 0.0
+#             habitaciones_pagadas = []
+
+
+#             for i, piso in enumerate(hotel):
+#                 for j, habitacion in enumerate(piso):
+#                     if habitacion:  # Si la habitación está ocupada
+#                         
+#                         if i <= 4 :
+#                             valor_habitacion = valor_economica
+#                         elif i <= 8 and i >= 5:
+#                             valor_habitacion = valor_suit
+#                         else:
+#                             valor_habitacion = valor_premium
+
+#                         monto_base_total += valor_habitacion  # Monto base por noche
+#                         iva_total += valor_habitacion * 0.19  # IVA del 19%
+#                         total_con_iva_total += valor_habitacion + (valor_habitacion * 0.19)
+
+
+#                         habitaciones_pagadas.append((habitacion[0], f"Piso {len(hotel) - i} - Hab {j + 1}", valor_habitacion))
+
+#             if monto_base_total > 0:  # Si hay habitaciones ocupadas
+#            
+#                 print(f"Monto total a pagar: {monto_base_total}")
+#                 print(f"Monto total de IVA: {iva_total}")
+#                 print(f"Total con IVA: {total_con_iva_total}")
+
+#          
+#                 pagar_todo = input("¿Desea pagar todo? (s/n): ")
+
+#                 if pagar_todo == 's':
+#                    
+#                     with open(f"boleta_total.txt", 'w') as file:
+#                         file.write(f"***** BOLETA TOTAL *****\n")
+#                         for cliente, habitacion, valor in habitaciones_pagadas:
+#                             file.write(f"Cliente: {cliente} - {habitacion} - Valor: {valor}\n")
+#                         file.write("----------------------------------\n")
+#                         file.write(f"Monto total a pagar: {monto_base_total}\n")
+#                         file.write(f"Monto total de IVA: {iva_total}\n")
+#                         file.write("----------------------------------\n")
+#                         file.write(f"Total con IVA: {total_con_iva_total}\n")
+#                         file.write("----------------------------------\n")
+#                         file.write("GRACIAS POR PREFERIR NUESTRO HOTEL\n")
+#                     print("Boleta guardada como boleta_total.txt")
+#                 else:
+#                     print("Pago no realizado.")
+#             else:
+#                 print("No hay habitaciones ocupadas.")
+
+#         case 5:
+#             print("Saliendo...")
+#             break
+
+#         case _:
+#             print("Opción no válida, seleccione de 1 a 5.")
+
+###############################################################################################################
+
+valor_premium = 10000  # Precio para las filas A-E
+valor_economica = 5000  # Precio para las filas F-J
+
+# Estructura de asientos: 10 filas y 6 asientos por fila
+cine =   [[[], [], [], [], [], []],
          [[], [], [], [], [], []],
          [[], [], [], [], [], []],
          [[], [], [], [], [], []],
@@ -366,11 +506,12 @@ hotel = [[[], [], [], [], [], []],
          [[], [], [], [], [], []],
          [[], [], [], [], [], []]]
 
+
 while True:
-    print("""*****HOTEL CALIFORNIA*****
-          1.- Agendar habitación
-          2.- Ver estado del hotel
-          3.- Verificar disponibilidad de habitaciones
+    print("""*****CINE****
+          1.- Reservar asiento
+          2.- Ver estado del cine
+          3.- Verificar disponibilidad de asientos
           4.- Monetizar
           5.- Salir""")
     op = int(input("Seleccione una opción: "))
@@ -378,115 +519,99 @@ while True:
     match op:
         case 1:
             while True:
-                # Mostrar los pisos de abajo hacia arriba
-                for i in range(len(hotel)):
-                    print(f"Piso {len(hotel) - i}")
+                
+                for i in range(len(cine)):
+                    fila = i  
+                    print(f"Fila {fila+1}: {cine[i]}")
 
-                PISO = int(input("Seleccione un piso o ingrese 0 para salir: "))
-                if PISO == 0:
+                fila_input = int(input("Seleccione una fila (0-9) o ingrese 0 para salir: "))
+                if fila_input == 0:
                     break
-                if PISO < 1 or PISO > len(hotel):
-                    print("Piso no válido, intente nuevamente.")
+
+                if fila_input < 0 or fila_input > 9:
+                    print("Fila no válida, intente nuevamente.")
                     continue
 
-                for j in range(len(hotel[0])):
-                    print(f"Habitación {j + 1}")
-
-                HABI = int(input("Seleccione una habitación o ingrese 0 para salir: "))
-                if HABI == 0:
-                    break
-                if HABI < 1 or HABI > len(hotel[0]):
-                    print("Habitación no válida, intente nuevamente.")
+                asiento_input = int(input("Seleccione un asiento (1-6): ")) - 1
+                if asiento_input < 0 or asiento_input > 5:
+                    print("Asiento no válido, intente nuevamente.")
                     continue
 
-                piso_seleccionado = len(hotel) - PISO
-                habitacion_seleccionada = HABI - 1
-
-                if hotel[piso_seleccionado][habitacion_seleccionada] == []:
+                if cine[fila_input][asiento_input] == []:
                     nombre = input("Ingrese el nombre del cliente: ")
-                    hotel[piso_seleccionado][habitacion_seleccionada].append(nombre)
-                    print(f"Habitación {HABI} agendada para {nombre} en el piso {PISO}.")
+                    cine[fila_input][asiento_input].append(nombre)  
+                    print(f"Asiento {asiento_input + 1} reservado para {nombre} en la fila {fila_input}.")
                     break
                 else:
-                    print("Habitación ocupada")
+                    print(f"Asiento {asiento_input + 1} ya está ocupado. Elija otro asiento.")
 
         case 2:
-            print("Estado del hotel:")
-            for i, piso in enumerate(hotel):
-                piso_numero = len(hotel) - i
-                if piso_numero <= 4:
-                    tipo_piso = 'Económico'
-                    valor = valor_economica
-                elif piso_numero <= 8:
-                    tipo_piso = 'Suit'
-                    valor = valor_suit
-                else:
-                    tipo_piso = 'Premium'
-                    valor = valor_premium
-
-                print(f"\nPiso {piso_numero} ({tipo_piso}): Valor habitación: {valor}")
-
-                # Mostrar el estado de las habitaciones en el piso
-                for j, habitacion in enumerate(piso):
-                    if not habitacion:
-                        print(f"  Habitación {j + 1}: Libre")
-                    else:
-                        print(f"  Habitación {j + 1}: Ocupada por {habitacion[0]}")
+            print("Estado del cine:")
+            for i, fila in enumerate(cine):
+                print(f"Fila {i}: {fila}")
 
         case 3:
-            print("Habitaciones disponibles:")
-            for i, piso in enumerate(hotel):
-                for j, habitacion in enumerate(piso):
-                    if not habitacion:
-                        print(f"Habitación {j + 1} del piso {i + 1} está disponible.")
+            print("Asientos disponibles y ocupados:")
+            for i, fila in enumerate(cine):
+                print(f"Fila {i}:")
+                for j, asiento in enumerate(fila):
+                    if asiento == []:
+                        print(f"  Asiento {j + 1}: Libre")
                     else:
-                        print(f"Habitación {j + 1} del piso {i + 1} está ocupada.")
+                        print(f"  Asiento {j + 1}: Ocupado por {asiento[0]}")
 
         case 4:
             print("Monetizando...")
 
-            # Inicializar montos
+         
             monto_base_total = 0.0
             iva_total = 0.0
             total_con_iva_total = 0.0
+            asientos_pagados = []
 
-            # Recorrer todas las habitaciones y sumar los montos de las ocupadas
-            for i, piso in enumerate(hotel):
-                for j, habitacion in enumerate(piso):
-                    if habitacion:  # Si la habitación está ocupada
-                        # Determinar el valor de la habitación según el piso
-                        if i < 4:
-                            valor_habitacion = valor_economica
-                        elif i < 8:
-                            valor_habitacion = valor_suit
-                        else:
-                            valor_habitacion = valor_premium
+  
+            for i, fila in enumerate(cine):
+                for j, asiento in enumerate(fila):
+                    if asiento != []: 
+                        if i <= 4:  
+                            valor_asiento = valor_premium
+                        else: 
+                            valor_asiento = valor_economica
 
-                        monto_base_total += valor_habitacion  # Monto base por noche
-                        iva_total += valor_habitacion * 0.19  # IVA del 19%
-                        total_con_iva_total += valor_habitacion + (valor_habitacion * 0.19)
+                        monto_base_total += valor_asiento 
+                        iva_total += valor_asiento * 0.19  
+                        total_con_iva_total += valor_asiento + (valor_asiento * 0.19)
 
-            if monto_base_total > 0:  # Si hay habitaciones ocupadas
-                # Mostrar los valores totales
+                   
+                        asientos_pagados.append((asiento[0], f"Fila {i} - Asiento {j + 1}", valor_asiento))
+
+            if monto_base_total > 0: 
+               
                 print(f"Monto total a pagar: {monto_base_total}")
                 print(f"Monto total de IVA: {iva_total}")
                 print(f"Total con IVA: {total_con_iva_total}")
 
-                # Preguntar si desea pagar todo
-                pagar_todo = input("¿Desea pagar todo? (sí/no): ").strip().lower()
+           
+                pagar_todo = input("¿Desea pagar todo? (s/n): ")
 
-                if pagar_todo == 'sí':
-                    # Guardar la boleta en un archivo .txt
-                    with open(f"boleta_total.txt", 'w') as file:
-                        file.write(f"***** BOLETA TOTAL *****\n")
+                if pagar_todo == 's':
+               
+                    with open(f"boleta_total_cine.txt", 'w') as file:
+                        file.write(f"***** BOLETA DE CINE *****\n")
+                        for cliente, asiento, valor in asientos_pagados:
+                            file.write(f"Cliente: {cliente} - {asiento} - Valor: {valor}\n")
+                        file.write("----------------------------------\n")
                         file.write(f"Monto total a pagar: {monto_base_total}\n")
                         file.write(f"Monto total de IVA: {iva_total}\n")
+                        file.write("----------------------------------\n")
                         file.write(f"Total con IVA: {total_con_iva_total}\n")
-                    print("Boleta guardada como boleta_total.txt")
+                        file.write("----------------------------------\n")
+                        file.write("GRACIAS POR PREFERIR NUESTRO CINE\n")
+                    print("Boleta guardada como boleta_total_cine.txt")
                 else:
-                    print("Pago cancelado.")
+                    print("Pago no realizado.")
             else:
-                print("No hay habitaciones ocupadas para monetizar.")
+                print("No hay asientos ocupados.")
 
         case 5:
             print("Saliendo...")
